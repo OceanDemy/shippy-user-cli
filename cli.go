@@ -4,9 +4,9 @@ import (
 	"log"
 	"os"
 
-	pb "github.com/EwanValentine/shippy-user-service/proto/user"
 	micro "github.com/micro/go-micro"
 	microclient "github.com/micro/go-micro/client"
+	pb "github.com/oceandemy/shippy/shippy-user-service/proto/user"
 	"golang.org/x/net/context"
 )
 
@@ -23,10 +23,10 @@ func main() {
 
 	client := pb.NewUserServiceClient("go.micro.srv.user", microclient.DefaultClient)
 
-	name := "Ewan Valentine"
-	email := "ewan.valentine89@gmail.com"
-	password := "test123"
-	company := "BBC"
+	name := "Kevin Nguyen"
+	email := "johansirius@gmail.com"
+	password := "developer"
+	company := "EnziinSystem"
 
 	r, err := client.Create(context.TODO(), &pb.User{
 		Name:     name,
